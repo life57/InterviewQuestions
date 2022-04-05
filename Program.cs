@@ -28,6 +28,8 @@ namespace ConsoleApp2
 
             RandomNofK(100, 100);
             Console.WriteLine();
+
+            ReverseInt(123);
         }
 
         public static int BinaryToDecimal(string s)
@@ -58,6 +60,20 @@ namespace ConsoleApp2
             {
                 Console.WriteLine(item);
             }
+        }
+        private static int ReverseInt(int n)
+        {
+            int rev = 0;
+            int length = (int)(Math.Log10(n) + 1);
+
+            for (int i=length-1; i>=0; i--)
+            {
+                int p = n % 10;
+                n /= 10;
+                rev += p * (int)Math.Pow(10, i);
+            }
+
+            return rev;
         }
     }
 }
